@@ -109,10 +109,9 @@ def plot_referendum_map(referendum_result_by_regions):
     expressed = (results["Choice A"] + results["Choice B"]).replace(0, pd.NA)
     results["ratio"] = results["Choice A"] / expressed
 
-    possible_code_cols = ["code", "code_reg", "region_code", "reg_code", 
-                          "insee"]
+    possi_code_cols = ["code", "code_reg", "region_code", "reg_code", "insee"]
     geo_code_col = next(
-        (col for col in possible_code_cols if col in gdf_regions.columns),
+        (col for col in possi_code_cols if col in gdf_regions.columns),
         None,
     )
     if geo_code_col is None:
